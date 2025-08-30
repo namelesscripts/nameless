@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 25.2.3.2 (Linux)"/>
+	<meta name="created" content="00:00:00"/>
+	<meta name="changed" content="00:00:00"/>
+	<style type="text/css">
+		@page { size: 8.27in 11.69in; margin: 0.79in }
+		p { margin-bottom: 0.1in; line-height: 115%; background: transparent }
+		pre { font-size: 10pt; font-family: "Liberation Mono", monospace; background: transparent }
+	</style>
+</head>
+<body lang="en-US" link="#000080" vlink="#800000" dir="ltr"><pre>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Roblox Join&lt;/title&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;script&gt;
+    window.onload = function() {
+      const params = new URLSearchParams(window.location.search);
+      const placeId = params.get(&quot;placeId&quot;);
+      const jobId = params.get(&quot;jobId&quot;);
+
+      if (!placeId || !jobId) {
+        document.body.innerHTML = &quot;❌ placeId или jobId не указаны.&quot;;
+        return;
+      }
+
+      const robloxUrl = `roblox://placeId=${placeId}&amp;gameInstanceId=${jobId}`;
+      window.location.href = robloxUrl;
+
+      setTimeout(() =&gt; {
+        const btn = document.createElement(&quot;button&quot;);
+        btn.innerText = &quot;Зайти в Roblox-сервер&quot;;
+        btn.style = &quot;font-size:20px;padding:10px 20px;&quot;;
+        btn.onclick = () =&gt; {
+          window.location.href = robloxUrl;
+        };
+        document.body.appendChild(btn);
+      }, 500);
+    };
+  &lt;/script&gt;
+&lt;/head&gt;
+&lt;body style=&quot;font-family:sans-serif; text-align:center; padding-top:50px;&quot;&gt;
+  &lt;h2&gt;⏳ Подключение к Roblox...&lt;/h2&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+</body>
+</html>
